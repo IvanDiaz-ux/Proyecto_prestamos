@@ -1,0 +1,310 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f4f6f8; /* Un fondo muy suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+    overflow: hidden; /* Evita scroll si no es necesario */
+}
+
+.login-container {
+    display: flex;
+    width: 90%; /* Ajusta el ancho total del contenedor */
+    max-width: 1200px; /* Límite para pantallas muy grandes */
+    height: 80vh; /* Ajusta la altura del contenedor principal */
+    max-height: 700px; /* Límite para pantallas muy grandes */
+    border-radius: 12px; /* Bordes más suaves */
+    overflow: hidden; /* Para que los bordes redondeados se apliquen a los paneles */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+#logo-login {
+  background-color: #e6ffe6;
+  display: flex;
+  flex-direction: column; /* Elementos uno encima del otro */
+  align-items: center;     /* Centrado horizontal */
+  justify-content: center; /* Centrado vertical */
+  padding: 20px;
+  gap: 0px;               /* Espacio entre imagen y texto */
+}
+
+#logo-login img {
+  width: 100px;            /* Aumenta el tamaño del logo */
+  height: auto;
+}
+
+#logo-login span {
+  font-size: 20px;         /* Texto más grande */
+  font-weight: bold;
+  color: #000;
+}
+
+.left-panel {
+    flex: 1; /* Ocupa la mitad del espacio */
+    background-color: #e6ffe6; /* El mismo verde claro que hemos usado */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #333;
+    text-align: left;
+}
+
+.left-panel .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: #3cb371;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.left-panel .logo-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #3cb371;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.left-panel h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.left-panel .tagline {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #444;
+}
+
+.feature-item i {
+    font-size: 24px;
+    color: #3cb371;
+    margin-right: 15px;
+    width: 30px; /* Para alinear los iconos */
+    text-align: center;
+}
+
+.right-panel {
+    flex: 1; /* Ocupa la otra mitad del espacio */
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.login-form-card {
+    width: 100%;
+    max-width: 400px; /* Limita el ancho del formulario */
+    text-align: center;
+    padding: 30px; /* Espaciado interno para el contenido del formulario */
+}
+
+.login-form-card h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.login-form-card .subtitle {
+    font-size: 15px;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* Alinea etiquetas a la izquierda */
+}
+
+.form-group label {
+    display: block; /* Cada label en su propia línea */
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bordes más redondeados para los inputs */
+    font-size: 16px;
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    border-color: #3cb371;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(60, 179, 113, 0.2); /* Sombra suave al enfocar */
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    color: #666;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    accent-color: #3cb371; /* Color del checkbox */
+}
+
+.forgot-password {
+    color: #3cb371;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+    color: #2e8b57;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background-color: #76c7c0; /* Un verde azulado más moderno y suave */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(118, 199, 192, 0.4); /* Sombra para el botón */
+}
+
+.btn-login:hover {
+    background-color: #66b5ae;
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+.register-link {
+    font-size: 15px;
+    color: #777;
+    margin-top: 30px;
+}
+
+.register-link a {
+    color: #3cb371;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+    color: #2e8b57;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .login-container {
+        flex-direction: column; /* Apila los paneles en pantallas pequeñas */
+        width: 100%;
+        height: auto;
+        min-height: 100vh; /* Ocupa toda la altura vertical en modo columna */
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .left-panel, .right-panel {
+        flex: none; /* Desactiva el flex grow */
+        width: 100%; /* Ocupa todo el ancho */
+        padding: 30px 20px;
+    }
+
+    .left-panel {
+        text-align: center; /* Centra el texto en el panel izquierdo */
+        padding-bottom: 20px;
+    }
+
+    .left-panel .logo {
+        justify-content: center; /* Centra el logo */
+        margin-bottom: 20px;
+    }
+
+    .left-panel h1 {
+        font-size: 28px;
+    }
+
+    .left-panel .tagline {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .features {
+        align-items: center; /* Centra los íconos y texto */
+        gap: 15px;
+    }
+
+    .feature-item {
+        justify-content: center; /* Centra el contenido del item */
+    }
+
+    .right-panel {
+        padding: 30px 20px;
+    }
+
+    .login-form-card {
+        padding: 20px;
+    }
+
+    .login-form-card h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+
+    .btn-login {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .form-options {
+        flex-direction: column; /* Apila las opciones Recordarme y Olvidó contraseña */
+        gap: 10px;
+        align-items: flex-start; /* Alinea a la izquierda las opciones apiladas */
+    }
+}

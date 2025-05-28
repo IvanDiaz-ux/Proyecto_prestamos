@@ -1,0 +1,286 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6ffe6;
+    padding: 10px 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-icon {
+    font-weight: bold;
+    color: #3cb371;
+    font-size: 18px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 400;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #3cb371;
+    border-bottom: 2px solid #3cb371;
+}
+
+.usuario-header img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    cursor: pointer;
+}
+.container {
+    padding: 30px;
+    flex-grow: 1; /* Permite que el contenedor principal ocupe el espacio restante */
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120px;
+}
+
+.card-title {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.card-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-info {
+    font-size: 14px;
+    color: #5cb85c; /* Verde para información positiva */
+    font-weight: 500;
+}
+
+/* Color para información negativa si fuera el caso */
+.card-info.negative {
+    color: #d9534f;
+}
+
+.recent-loans {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+.recent-loans h2 {
+    font-size: 22px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+table th {
+    background-color: #f9f9f9;
+    color: #666;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.status-green {
+    background-color: #5cb85c; /* Verde para "Al día" */
+}
+
+.status-red {
+    background-color: #d9534f; /* Rojo para "Atrasado" */
+}
+
+.action-button {
+    background-color: #4CAF50; /* Un verde vibrante para los botones */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #45a049;
+}
+
+.new-loan-button {
+    background-color: #3cb371; /* Un verde similar al del logo */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.new-loan-button:hover {
+    background-color: #369b65;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #e6ffe6; /* El mismo verde claro del encabezado */
+    color: #777;
+    font-size: 14px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-left span,
+.footer-right span {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-left span:hover,
+.footer-right span:hover {
+    color: #3cb371;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+    }
+
+    .navbar li {
+        margin-left: 0;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+
+    table th, table td {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .action-button {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    .card-value {
+        font-size: 28px;
+    }
+    .recent-loans h2 {
+        font-size: 20px;
+    }
+    .new-loan-button {
+        width: 100%;
+        text-align: center;
+    }
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-left, .footer-right {
+        margin-bottom: 5px;
+    }
+}

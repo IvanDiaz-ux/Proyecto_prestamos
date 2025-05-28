@@ -1,0 +1,215 @@
+body {
+  font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6ffe6;
+    padding: 10px 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-icon {
+    font-weight: bold;
+    color: #3cb371;
+    font-size: 18px;
+}
+.register-container {
+    flex-grow: 1; /* Permite que el contenedor principal crezca y centre el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.register-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    width: 100%;
+    max-width: 500px; /* Ancho máximo para el formulario */
+    text-align: center; /* Centra el texto principal del formulario */
+}
+
+.register-card h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Convertir a mayúsculas como en la imagen */
+}
+
+.register-card .subtitle {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* Alinea etiquetas y campos a la izquierda */
+}
+
+.form-group label {
+    display: block; /* Cada label en su propia línea */
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bordes más redondeados para los inputs */
+    font-size: 16px;
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #3cb371;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(60, 179, 113, 0.2); /* Sombra suave al enfocar */
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: flex-start; /* Alinea el texto con el checkbox */
+    margin-top: 25px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #666;
+    text-align: left; /* Asegura que el texto largo se alinee a la izquierda */
+}
+
+.terms-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 3px; /* Pequeño ajuste para alinear con el texto */
+    width: 18px; /* Tamaño un poco más grande para el checkbox */
+    height: 18px;
+    accent-color: #3cb371; /* Color del checkbox */
+    flex-shrink: 0; /* Evita que el checkbox se encoja */
+}
+
+.terms-checkbox .link-terms {
+    color: #3cb371;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.terms-checkbox .link-terms:hover {
+    text-decoration: underline;
+    color: #2e8b57;
+}
+
+.btn-create-account {
+    width: 100%;
+    padding: 15px;
+    background-color: #76c7c0; /* El mismo verde azulado moderno */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(118, 199, 192, 0.4);
+    margin-bottom: 25px;
+}
+
+.btn-create-account:hover {
+    background-color: #66b5ae;
+    transform: translateY(-2px);
+}
+
+.login-link {
+    font-size: 15px;
+    color: #777;
+}
+
+.login-link a {
+    color: #3cb371;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+    color: #2e8b57;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header-register {
+        padding: 10px 20px;
+        justify-content: center; /* Centra el logo en móviles */
+    }
+    .header-register .logo {
+        font-size: 18px;
+    }
+    .register-container {
+        padding: 20px;
+    }
+    .register-card {
+        padding: 30px 25px;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+    .register-card h2 {
+        font-size: 24px;
+    }
+    .register-card .subtitle {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    .btn-create-account {
+        padding: 12px;
+        font-size: 16px;
+    }
+    .terms-checkbox {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-card {
+        padding: 25px 15px;
+    }
+    .form-group label {
+        font-size: 13px;
+    }
+    .terms-checkbox label {
+        line-height: 1.4; /* Mejora la legibilidad en líneas múltiples */
+    }
+}

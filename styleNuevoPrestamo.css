@@ -1,0 +1,370 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header Section (Copied from dashboard, with 'Reportes' removed from HTML) --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6ffe6;
+    padding: 10px 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-icon {
+    font-weight: bold;
+    color: #3cb371;
+    font-size: 18px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 400;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #3cb371;
+    border-bottom: 2px solid #3cb371;
+}
+
+.usuario-header img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* --- Main Content Wrapper --- */
+.main-content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea arriba para evitar que se centre demasiado alto si el formulario es corto */
+    padding: 30px;
+}
+
+.loan-form-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px; /* Ancho máximo para un formulario más espacioso */
+}
+
+.loan-form-card h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.loan-form-card .subtitle {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 25px 40px; /* Espaciado entre filas y columnas */
+    margin-bottom: 40px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #3cb371;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(60, 179, 113, 0.2);
+}
+
+/* Estilo para el input de fecha y su icono */
+.input-with-icon {
+    position: relative;
+    display: flex; /* Para alinear el input y el icono */
+    align-items: center;
+}
+
+.input-with-icon input[type="date"] {
+    padding-right: 40px; /* Deja espacio para el icono */
+}
+
+.input-with-icon .fa-calendar-alt {
+    position: absolute;
+    right: 15px;
+    color: #888;
+    pointer-events: none; /* Permite hacer clic en el input a través del icono */
+}
+
+/* Estilo para el input de monto con símbolo de moneda */
+.input-with-currency {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0 10px; /* Padding para el contenedor */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-with-currency:focus-within { /* Estilo al enfocar el input dentro del div */
+    border-color: #3cb371;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(60, 179, 113, 0.2);
+}
+
+.input-with-currency span {
+    color: #555;
+    margin-right: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.input-with-currency input {
+    border: none; /* Elimina el borde del input interno */
+    padding: 12px 0; /* Ajusta el padding del input interno */
+    flex-grow: 1; /* Permite que el input ocupe el espacio restante */
+}
+
+.input-with-currency input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* Estilo para el campo de frecuencia de pago solo lectura */
+input[readonly] {
+    background-color: #f9f9f9;
+    cursor: default;
+    opacity: 0.9;
+}
+
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 15px; /* Espacio entre los botones */
+    margin-top: 40px;
+}
+
+.btn-secondary {
+    padding: 12px 25px;
+    background-color: #e0e0e0;
+    color: #555;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #d0d0d0;
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    padding: 12px 25px;
+    background-color: #76c7c0; /* Verde azulado moderno */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(118, 199, 192, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: #66b5ae;
+    transform: translateY(-2px);
+}
+
+/* --- Footer Section (Same as first dashboard) --- */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #e6ffe6;
+    color: #777;
+    font-size: 14px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-left span,
+.footer-right span {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-left span:hover,
+.footer-right span:hover {
+    color: #3cb371;
+}
+
+
+/* --- Responsiveness --- */
+@media (max-width: 900px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+    }
+    .navbar li {
+        margin-left: 0;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+    .main-content-wrapper {
+        padding: 20px;
+    }
+    .loan-form-card {
+        padding: 30px 25px;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+    .loan-form-card h2 {
+        font-size: 24px;
+    }
+    .loan-form-card .subtitle {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+    .form-grid {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas más pequeñas */
+        gap: 20px;
+    }
+    .form-group input,
+    .input-with-currency input,
+    .input-with-icon input {
+        padding: 10px 12px;
+        font-size: 18px;
+    }
+    .input-with-currency span {
+        font-size: 18px;
+    }
+    .input-with-icon .fa-calendar-alt {
+        font-size: 18px;
+        right: 12px;
+    }
+    .form-actions {
+        flex-direction: column-reverse; /* Pone Cancelar arriba de Crear Préstamo */
+        gap: 10px;
+        align-items: center; /* Centra los botones apilados */
+    }
+    .btn-secondary,
+    .btn-primary {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        max-width: 300px; /* Límite para que no se estiren demasiado */
+    }
+}
+
+@media (max-width: 480px) {
+    .loan-form-card {
+        padding: 25px 15px;
+    }
+    .form-group label {
+        font-size: 13px;
+    }
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+}
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group select:focus {
+    border-color: #3cb371;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(60, 179, 113, 0.2);
+}
+
+/* Ajustes extra para más botones */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 40px;
+}

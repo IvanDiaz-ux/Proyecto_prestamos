@@ -1,0 +1,376 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f4f6f8; /* Fondo suave */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header Section (Same as previous, for consistency) --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6ffe6;
+    padding: 10px 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-icon {
+    font-weight: bold;
+    color: #3cb371;
+    font-size: 18px;
+}
+/* --- Main Content Wrapper --- */
+.main-content-wrapper {
+    flex-grow: 1; /* Permite que el wrapper ocupe el espacio restante */
+    display: flex;
+    flex-direction: column; /* Apila el formulario y la tabla */
+    align-items: center; /* Centra el contenido horizontalmente */
+    padding: 30px; /* Espaciado general */
+}
+
+/* --- Payment Form Section --- */
+.payment-form-section {
+    width: 100%;
+    max-width: 800px; /* Ancho máximo para el formulario */
+    margin-bottom: 40px; /* Espacio entre el formulario y la tabla */
+}
+
+.payment-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra pronunciada */
+    text-align: center;
+}
+
+.payment-card h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: capitalize; /* Capitaliza la primera letra de cada palabra */
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+    gap: 25px 30px; /* Espacio vertical y horizontal entre campos */
+    margin-bottom: 30px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1; /* Ocupa ambas columnas */
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="number"] { /* Añadido number por si se usa para valores */
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #3cb371;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(60, 179, 113, 0.2);
+}
+
+.payment-options-group {
+    display: flex;
+    justify-content: center; /* Centra las opciones */
+    gap: 40px; /* Espacio entre las dos opciones de pago */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Permite que las opciones se envuelvan en pantallas pequeñas */
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre label, checkbox e input */
+}
+
+.payment-option label {
+    font-size: 15px;
+    color: #555;
+    font-weight: 500;
+}
+
+.payment-option input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #3cb371; /* Color del checkbox */
+}
+
+.payment-option input[type="text"] {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    width: 180px; /* Ancho fijo para los campos de valor */
+}
+
+.payment-option input[type="text"]:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+.btn-pay {
+    padding: 15px 40px;
+    background-color: #76c7c0; /* El mismo verde azulado moderno */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(118, 199, 192, 0.4);
+}
+
+.btn-pay:hover {
+    background-color: #66b5ae;
+    transform: translateY(-2px);
+}
+
+/* --- Payment Plan Section --- */
+.payment-plan-section {
+    width: 100%;
+    max-width: 1000px; /* Ancho máximo para la tabla */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra un poco menos pronunciada */
+    margin-bottom: 20px; /* Espacio antes del footer */
+}
+
+.payment-plan-section h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.table-container {
+    overflow-x: auto; /* Permite scroll horizontal en tablas grandes en móviles */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px; /* Ancho mínimo para la tabla si es muy estrecha */
+}
+
+table th,
+table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+table th {
+    background-color: #f9f9f9;
+    color: #666;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.status-green {
+    background-color: #5cb85c; /* Verde para "Pagado" */
+}
+
+.status-red {
+    background-color: #d9534f; /* Rojo para "Pendiente" */
+}
+
+
+/* --- Footer Section (Same as first dashboard) --- */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #e6ffe6;
+    color: #777;
+    font-size: 14px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-left span,
+.footer-right span {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-left span:hover,
+.footer-right span:hover {
+    color: #3cb371;
+}
+
+
+/* --- Responsiveness --- */
+@media (max-width: 900px) {
+    .header-payment {
+        padding: 10px 20px;
+        justify-content: center;
+    }
+    .header-payment .logo {
+        font-size: 18px;
+    }
+    .main-content-wrapper {
+        padding: 20px;
+    }
+    .payment-card {
+        padding: 30px 25px;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+    .payment-card h2 {
+        font-size: 24px;
+    }
+    .form-grid {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas más pequeñas */
+        gap: 20px;
+    }
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    .payment-options-group {
+        flex-direction: column; /* Apila las opciones de pago */
+        gap: 20px;
+        align-items: flex-start; /* Alinea a la izquierda las opciones apiladas */
+    }
+    .payment-option input[type="text"] {
+        width: 100%; /* El campo de valor ocupa todo el ancho disponible */
+        max-width: 250px; /* Para que no se estire demasiado */
+    }
+    .btn-pay {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    .payment-plan-section {
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+    .payment-plan-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    table {
+        min-width: 600px; /* Reduce un poco el ancho mínimo de la tabla */
+    }
+}
+
+@media (max-width: 600px) {
+    .payment-plan-section h3 {
+        text-align: center; /* Centra el título de la tabla */
+    }
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-card {
+        padding: 25px 15px;
+    }
+    .form-group label {
+        font-size: 13px;
+    }
+    .payment-option label {
+        font-size: 14px;
+    }
+    .payment-option input[type="text"] {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    table {
+        min-width: 500px; /* Asegura que la tabla no se haga demasiado pequeña */
+    }
+    table th, table td {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}
+/* Estilos del modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: black;
+    }
